@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 };
 
 import { Header } from "@/components/header";
+import { Container } from "@/components/container";
 
 export default function RootLayout({
   children,
@@ -30,7 +31,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        {children}
+        <Container>
+          {children}
+        </Container>
       </body>
     </html>
   );
