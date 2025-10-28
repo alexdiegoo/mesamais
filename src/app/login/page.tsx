@@ -21,13 +21,13 @@ export default function LoginPage() {
             <p className="mt-6 mb-2">Ou</p>
             <div className="flex justify-center space-x-4">
                 <Link
-                href="/cadastro/doador"
+                href="/signup/doador"
                 className="px-4 py-2 border rounded-md font-medium hover:bg-gray-50"
                 >
                 Cadastrar como Doador
                 </Link>
                 <Link
-                href="/cadastro/entidade"
+                href="/signup/entidade"
                 className="px-4 py-2 border rounded-md font-medium hover:bg-gray-50"
                 >
                 Cadastrar como Entidade
