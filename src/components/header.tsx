@@ -2,7 +2,15 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/container";
 
-export function Header() {
+import { createClient } from "@/utils/supabase/server";
+
+import { signout } from "@/actions/signout";
+
+export async function Header() {
+  const supabase = await createClient()
+
+  const { data } = await supabase.auth.getUser()
+
   return (
     <header className="border-b bg-white">
       <Container className="flex items-center justify-between py-4">
@@ -22,12 +30,16 @@ export function Header() {
           </Link>
         </nav>
 
-        <Button
-          asChild
-          className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6"
-        >
-          <Link href="/login">Login</Link>
-        </Button>
+        {
+            data.user ? <Button onClick={signout} className="bg-gray-500">Sair</Button> : (
+             <Button
+                asChild
+                className="bg-green-500 hover:bg-green-600 text-white font-semibold px-6"
+            >
+                <Link href="/login">Login</Link>
+            </Button>
+            )
+        }
       </Container>
     </header>
   );

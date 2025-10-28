@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import Link from "next/link";
 
-import { login } from "@/app/login/actions/login";
+import { login } from "@/actions/login";
 
 export function LoginForm() {
   return (
