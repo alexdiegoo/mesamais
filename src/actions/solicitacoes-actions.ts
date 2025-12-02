@@ -10,6 +10,7 @@ export type SolicitacaoEntidade = {
   tipo: string;
   quantidade: number;
   status: string; 
+  entidade_id: string;
 };
 
 export async function buscarSolicitacoesAbertas() {
@@ -25,7 +26,8 @@ export async function buscarSolicitacoesAbertas() {
         quantidade,
         status,
         entidade_nome,
-        entidade_endereco
+        entidade_endereco,
+        entidade_id
       `
     )
     .eq("status", "solicitado") 

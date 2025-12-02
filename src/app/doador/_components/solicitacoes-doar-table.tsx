@@ -4,6 +4,9 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Check, X, HandHeart } from "lucide-react";
 import { SolicitacaoComFlag } from "./doar-page";
+import { registrarDoacao } from "@/actions/doar-actions"; 
+import { toast } from "sonner"; 
+
 const formatDate = (iso: string) => {
   if (!iso) return "-";
   const d = new Date(iso);
@@ -13,6 +16,33 @@ const formatDate = (iso: string) => {
 };
 
 export function SolicitacoesDoarTable({ data }: { data: SolicitacaoComFlag[] }) {
+  
+  const handleClickDoar = async (item: SolicitacaoComFlag) => {
+    if (!item.tem_inventario) {
+      toast.error("Você precisa ter o item correspondente no seu inventário.");
+      return;
+    }
+
+    const payload = {
+      id: item.id,
+      entidade_id: item.entidade_id,
+      tipo: item.tipo,
+      quantidade: item.quantidade,
+    };
+
+    toast.info("Registrando seu compromisso de doação...");
+    
+    const result = await registrarDoacao(payload);
+
+    if (result.success) {
+      toast.success(result.message);
+
+    } else {
+      toast.error(result.message);
+    }
+  };
+
+
   return (
     <div className="flex flex-col w-full">
 
@@ -74,8 +104,9 @@ export function SolicitacoesDoarTable({ data }: { data: SolicitacaoComFlag[] }) 
                             <Button 
                               size="sm" 
                               className="bg-green-500 hover:bg-green-600 text-white flex items-center gap-2"
-                              disabled={!item.tem_inventario}
+                              disabled={!item.tem_inventario} 
                               title={!item.tem_inventario ? "Adicione este item ao seu inventário para doar" : "Clique para iniciar a doação"}
+                              onClick={() => handleClickDoar(item)} 
                             >
                                 <HandHeart className="h-4 w-4" />
                                 Doar
