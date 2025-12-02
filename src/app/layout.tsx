@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 import { Header } from "@/components/header";
 import { Container } from "@/components/container";
 
+import { Toaster } from "sonner";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,6 +35,7 @@ export default function RootLayout({
         <Header />
         <Container>
           {children}
+          <Toaster position="top-center"/>
         </Container>
       </body>
     </html>
