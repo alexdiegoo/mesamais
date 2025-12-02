@@ -92,12 +92,6 @@ export function HistoricoTable({ data }: { data: Solicitacao[] }) {
           </tbody>
         </table>
       </div>
-
-      <div className="flex justify-end mt-4">
-        <Button className="bg-gray-200 text-gray-700 hover:bg-gray-300">
-          Exportar Dados
-        </Button>
-      </div>
     </div>
   );
 }
