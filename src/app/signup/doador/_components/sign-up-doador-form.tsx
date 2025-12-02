@@ -125,74 +125,14 @@ export function SignUpDoadorForm() {
         </div>
 
         <div>
-          <Label htmlFor="rua" className="mb-2">
-            Rua
+          <Label htmlFor="endereco" className="mb-2">
+            Endereço completo
           </Label>
           <Input
-            id="rua"
-            name="rua"
+            id="endereco"
+            name="endereco"
             type="text"
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="numero" className="mb-2">
-            Número
-          </Label>
-          <Input
-            id="numero"
-            name="numero"
-            type="text"
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="complemento" className="mb-2">
-            Complemento
-          </Label>
-          <Input
-            id="complemento"
-            name="complemento"
-            type="text"
-            placeholder="Opcional"
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="bairro" className="mb-2">
-            Bairro
-          </Label>
-          <Input
-            id="bairro"
-            name="bairro"
-            type="text"
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="cidade" className="mb-2">
-            Cidade
-          </Label>
-          <Input
-            id="cidade"
-            name="cidade"
-            type="text"
-            required
-          />
-        </div>
-
-        <div>
-          <Label htmlFor="estado" className="mb-2">
-            Estado
-          </Label>
-          <Input
-            id="estado"
-            name="estado"
-            type="text"
-            placeholder="PE, SP, RJ..."
+             placeholder="Rua X, N1, Bairro." 
             required
           />
         </div>

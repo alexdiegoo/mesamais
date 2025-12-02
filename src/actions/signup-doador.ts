@@ -16,12 +16,7 @@ export async function signUpDoador(formData: FormData) {
 
   // Endereço
   const cep = formData.get('cep') as string
-  const rua = formData.get('rua') as string
-  const numero = formData.get('numero') as string
-  const complemento = formData.get('complemento') as string
-  const bairro = formData.get('bairro') as string
-  const cidade = formData.get('cidade') as string
-  const estado = formData.get('estado') as string
+  const endereco = formData.get('endereco') as string
 
   const email = formData.get('email') as string
   const senha = formData.get('senha') as string
@@ -42,15 +37,8 @@ export async function signUpDoador(formData: FormData) {
         cnpj,
         responsavel,
         telefone,
-        endereco: {
-          cep,
-          rua,
-          numero,
-          complemento,
-          bairro,
-          cidade,
-          estado
-        }
+        cep,
+        endereco
       }
     }
   })
