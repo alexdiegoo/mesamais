@@ -1,4 +1,4 @@
-import { SignUpDoadorForm } from "@/components/sign-up-doador-form";
+import { SignUpDoadorForm } from "@/app/signup/doador/_components/sign-up-doador-form";
 
 export default function SignUpDoadorPage() {
   return (

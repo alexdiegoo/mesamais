@@ -11,7 +11,6 @@ import { redirect } from "next/navigation"
 
 export function SignUpDoadorForm() {
   const [error, setError] = useState<string | null>(null)
-  const [success, setSuccess] = useState<string | null>(null)
   const [isPending, startTransition] = useTransition()
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
@@ -19,7 +18,6 @@ export function SignUpDoadorForm() {
     const formData = new FormData(e.currentTarget)
 
     setError(null)
-    setSuccess(null)
 
     startTransition(async () => {
       const result = await signUpDoador(formData)
@@ -252,7 +250,6 @@ export function SignUpDoadorForm() {
       </Button>
 
       {error && <p className="text-red-500 text-sm">{error}</p>}
-      {success && <p className="text-green-600 text-sm">{success}</p>}
     </form>
   );
 }
