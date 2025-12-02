@@ -3,16 +3,16 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { BarChart3, Truck, UserRound, Package } from "lucide-react";
+import { BarChart3, Truck, Package, HandHeart } from "lucide-react";
 
 export function DoadorSidebar() {
   const pathname = usePathname();
 
   const menu = [
+    { label: "Doar", href: "/doador/doar", icon: HandHeart },
     { label: "Relatórios", href: "/doador", icon: BarChart3 },
     { label: "Inventário", href: "/doador/inventario", icon: Package },
     { label: "Coletas", href: "/doador/coletas", icon: Truck },
-    { label: "Perfil", href: "/doador/perfil", icon: UserRound },
   ];
 
   return (

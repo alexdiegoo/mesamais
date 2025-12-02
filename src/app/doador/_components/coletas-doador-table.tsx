@@ -14,7 +14,6 @@ export type DoacaoDisplay = {
   data_coleta: string;
 };
 
-// Funções utilitárias (reutilizadas do seu exemplo)
 const getStatusStyles = (status: string | null) => {
   switch (status?.toLowerCase()) {
     case "solicitada":
@@ -41,8 +40,6 @@ const formatDate = (iso: string | null) => {
 
 export function ColetasDoadorTable({ data }: { data: DoacaoDoador[] }) {
 
-    console.log({ data })
-
   const dataDisplay: DoacaoDisplay[] = data.map((item) => ({
     id: item.id,
     data_doacao: formatDate(item.created_at),
@@ -52,9 +49,6 @@ export function ColetasDoadorTable({ data }: { data: DoacaoDoador[] }) {
     status: item.status || "Pendente",
     data_coleta: formatDate(item.data_recebimento)
   }));
-
-  console.log({ dataDisplay })
-
 
   return (
     <div>
