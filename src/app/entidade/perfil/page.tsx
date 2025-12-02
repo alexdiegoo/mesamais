@@ -33,7 +33,8 @@ export default async function Page() {
         responsavel,
         telefone,
         cep,
-        endereco
+        endereco,
+        usuario_id: user.id
       }}
     />
   );
