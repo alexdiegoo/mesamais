@@ -125,43 +125,14 @@ export function SignUpEntidadeForm() {
 
         <div>
           <Label htmlFor="rua" className="mb-2">
-            Rua
+            Endereço completo
           </Label>
-          <Input id="rua" name="rua" type="text" required />
-        </div>
-
-        <div>
-          <Label htmlFor="numero" className="mb-2">
-            Número
-          </Label>
-          <Input id="numero" name="numero" type="text" required />
-        </div>
-
-        <div>
-          <Label htmlFor="bairro" className="mb-2">
-            Bairro
-          </Label>
-          <Input id="bairro" name="bairro" type="text" required />
-        </div>
-
-        <div>
-          <Label htmlFor="cidade" className="mb-2">
-            Cidade
-          </Label>
-          <Input id="cidade" name="cidade" type="text" required />
-        </div>
-
-        <div>
-          <Label htmlFor="estado" className="mb-2">
-            Estado
-          </Label>
-          <Input
-            id="estado"
-            name="estado"
+          <Input 
+            id="endereco" 
+            name="endereco" 
             type="text"
-            placeholder="PE, SP, RJ..."
-            required
-          />
+            placeholder="Rua X, N1, Bairro." 
+            required />
         </div>
       </div>
 
