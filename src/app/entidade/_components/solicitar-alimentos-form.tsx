@@ -10,6 +10,8 @@ import { toast } from "sonner";
 
 import { solicitarAlimento } from "@/actions/solicitar-alimento";
 
+import { TIPOS_ALIMENTO_OPCOES } from "@/utils/tipos-de-alimentos";
+
 export function SolicitarAlimentosForm() {
   const [isPending, startTransition] = useTransition();
 
@@ -33,10 +35,11 @@ export function SolicitarAlimentosForm() {
             <SelectValue placeholder="Selecione o tipo de alimento" />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="frutas">Frutas</SelectItem>
-            <SelectItem value="verduras">Verduras</SelectItem>
-            <SelectItem value="prontos">Pratos Prontos</SelectItem>
-            <SelectItem value="pereciveis">Perecíveis</SelectItem>
+            {TIPOS_ALIMENTO_OPCOES.map((tipo) => (
+              <SelectItem key={tipo} value={tipo}>
+                {tipo}
+              </SelectItem>
+            ))}
           </SelectContent>
         </Select>
       </div>

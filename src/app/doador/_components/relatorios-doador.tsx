@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useTransition } from "react";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MetricCard } from "./metric-card";
 import { EntidadesTable } from "./entidades-table"; 
@@ -118,31 +117,6 @@ export function RelatoriosDoador() {
       <p className="text-gray-600 mb-8">
         Visualize o impacto das suas doações e como elas estão ajudando a combater a fome.
       </p>
-
-      <div className="flex items-center gap-4 mb-6">
-        <input
-          type="date"
-          className="border rounded-md px-3 py-2 text-sm"
-          value={periodo}
-          onChange={(e) => setPeriodo(e.target.value)}
-          disabled={isGlobalLoading}
-        />
-
-        <Button 
-          className="bg-gray-200 text-gray-700 hover:bg-gray-300"
-          disabled={isGlobalLoading}
-        >
-          Exportar
-        </Button>
-
-        <Button 
-          className="bg-green-600 text-white hover:bg-green-700" 
-          onClick={handleApplyFilters}
-          disabled={isGlobalLoading || !userId}
-        >
-          {isGlobalLoading ? "Carregando..." : "Aplicar Filtros"}
-        </Button>
-      </div>
       
       {isGlobalLoading ? (
         <div className="text-center py-10 text-lg text-gray-500">

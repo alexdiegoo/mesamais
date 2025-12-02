@@ -1,8 +1,6 @@
 "use client";
 
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select";
 import { Badge } from "@/components/ui/badge";
 
 export type Solicitacao = {
@@ -48,9 +46,6 @@ const formatDate = (iso: string) => {
 };
 
 export function HistoricoTable({ data }: { data: Solicitacao[] }) {
-  const [periodo, setPeriodo] = useState("");
-  const [tipo, setTipo] = useState("");
-
   return (
     <div className="flex flex-col w-full">
 
@@ -59,31 +54,6 @@ export function HistoricoTable({ data }: { data: Solicitacao[] }) {
         Visualize e gerencie o histórico de todas as doações recebidas pela sua entidade.
         Utilize os filtros para refinar a busca e exporte os dados para análises detalhadas.
       </p>
-
-      <div className="flex items-center gap-4 mb-6">
-        <Select onValueChange={setPeriodo}>
-          <SelectTrigger className="w-40">
-            <SelectValue placeholder="Período" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="7">Últimos 7 dias</SelectItem>
-            <SelectItem value="30">Últimos 30 dias</SelectItem>
-            <SelectItem value="90">Últimos 3 meses</SelectItem>
-          </SelectContent>
-        </Select>
-
-        <Select onValueChange={setTipo}>
-          <SelectTrigger className="w-48">
-            <SelectValue placeholder="Tipo de Alimento" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="np">Não Perecíveis</SelectItem>
-            <SelectItem value="frutas">Frutas e Verduras</SelectItem>
-            <SelectItem value="laticinios">Laticínios</SelectItem>
-            <SelectItem value="carnes">Carnes</SelectItem>
-          </SelectContent>
-        </Select>
-      </div>
 
       <div className="border rounded-lg bg-white shadow-sm overflow-hidden">
         <table className="w-full text-left">
