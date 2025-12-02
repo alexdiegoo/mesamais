@@ -11,9 +11,9 @@ export default async function Page() {
   if (!user) return <div>Você precisa estar logado.</div>;
 
   const { data, error } = await supabase
-    .from("solicitacoes")
+    .from("doacoes")
     .select("*")
-    .eq("usuario_id", user.id)
+    .eq("entidade_id", user.id)
     .order("created_at", { ascending: false });
 
   if (error) {

@@ -21,10 +21,10 @@ export async function solicitarAlimento(formData: FormData) {
     tipo: formData.get("tipo"),
     quantidade: formData.get("quantidade"),
     observacoes: formData.get("observacoes") || "",
-    usuario_id: user.id, 
+    entidade_id: user.id, 
   };
 
-  const { error } = await supabase.from("solicitacoes").insert(data);
+  const { error } = await supabase.from("doacoes").insert(data);
 
   if (error) {
     console.error(error);

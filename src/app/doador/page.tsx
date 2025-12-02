@@ -1,3 +1,8 @@
-export default function Page() {
-    return <h1>Doador</h1>
+import { RelatoriosDoador } from "./_components/relatorios-doador";
+import { getRelatorioDoador } from "@/actions/get-relatorio-doador";
+
+export default async function Page() {
+  return (
+        <RelatoriosDoador />
+  )
 }
